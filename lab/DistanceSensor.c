@@ -4,15 +4,30 @@
 #include "lcd.h"
 #include "LED.h"
 
+/* DistanceSensor.c - Implementation for Ultrasonic Distance Sensor
+*	 Includes funtions for initializing and reading distance from 
+*	 HCSR404 ultra sonic distance sensor using slave mode interrupts.
+*  By: Nolan Thomas and Stephane Durette
+*	 April 3, 2020
+*/
+
 #define TRIG_PIN 6
+#define MAX_ECHO_PULSE_WIDTH 15000
+
 static volatile uint32_t pulse_width = 0;
 
+/*
+* Call to setup 
+*/
 void DS_Init(){
 	DS_Init_Trigger();
 	DS_Init_Echo();
 }
 
-void DS_Init_Trigger(){
+/* DS_Init_Trigger() sets up PB6 on TIM4 CH2
+*  to send pulses to trigger the ultrasonic sensor.
+*/
+static void DS_Init_Trigger(){
 		
 	uint32_t pulseWidth_uS = 200; //should at least 10uS
 	uint32_t pulseDelay_uS = 500000;
@@ -67,10 +82,11 @@ void DS_Init_Trigger(){
 	SET_BITS(TIM4->CR1, TIM_CR1_CEN);
 }
 
-/* This function is setup for PA.0 to work with TIM2_CH1
- * 
+/* Configure PA.0 as input capture for echo signal on
+*  TIM2 CH1. Enable it to generate slave mode interrupts that will
+*  measure the width of incoming pulses
 */
-void DS_Init_Echo(void){	 
+static void DS_Init_Echo(void){	 
 
 	ConfigPA0();
 	
@@ -132,7 +148,8 @@ void DS_Init_Echo(void){
 
 }
 
-void ConfigPA0(void){
+// This function is setup for PA.0 to work as TIM2_CH1
+static void ConfigPA0(void){
 
 		//enable clock on port A
 	SET_BITS(RCC->AHB2ENR, RCC_AHB2ENR_GPIOAEN);
@@ -157,8 +174,13 @@ void ConfigPA0(void){
 
 }
 
+/* Interrupt Service Routine for responding to
+*  input events on TIM2 CH1 our input capture for the sensor
+*  reads pulse width of echo in microseconds and puts that value into pulse_width variable
+*/
 void TIM2_IRQHandler(void){
-	Green_LED_Toggle();
+	Green_LED_Toggle(); //Toggle the green LED for debugging
+	
 	if((TIM2->SR & TIM_SR_UIF) != 0){ //Check if overflow has taken place
 		TIM2->SR &= ~TIM_SR_UIF;				//clear UIF flag to prevent re-entering
 	}
@@ -168,7 +190,8 @@ void TIM2_IRQHandler(void){
 	}
 }
 
+//Takes pulse_width and returns a distance in CM or -1 if the pulse is too large
 uint32_t DS_GetDistance_cm(){
-	return pulse_width / 58;
+	return (pulse_width <= MAX_ECHO_PULSE_WIDTH ? pulse_width / 58 : -1);
 }
 

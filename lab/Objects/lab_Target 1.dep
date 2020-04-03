@@ -10,7 +10,7 @@ I (C:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsi
 I (C:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D2663A6)
 I (C:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9020C4)
 I (C:\Users\user\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x5DEEDEF4)
-F (.\main.c)(0x5E875091)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\user\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32L476xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x5E877D70)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\user\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32L476xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (stm32l476xx.h)(0x5E83C267)
 I (C:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D2663A6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9BA508)
@@ -23,7 +23,7 @@ I (SysClock.h)(0x5E7A8CC0)
 I (LED.h)(0x5E7A8CC0)
 I (lcd.h)(0x5E7A0B25)
 I (utils.h)(0x5E7A0B25)
-I (DistanceSensor.h)(0x5E8741AD)
+I (DistanceSensor.h)(0x5E877DC5)
 F (.\SysClock.c)(0x5E7A8CC0)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\user\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32L476xx-o .\objects\sysclock.o --omf_browse .\objects\sysclock.crf --depend .\objects\sysclock.d)
 I (SysClock.h)(0x5E7A8CC0)
 I (stm32l476xx.h)(0x5E83C267)
@@ -53,8 +53,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9BA50A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5D9BA50A)
 F (.\lcd.h)(0x5E7A0B25)()
 F (.\utils.h)(0x5E7A0B25)()
-F (.\DistanceSensor.c)(0x5E8751A7)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\user\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32L476xx-o .\objects\distancesensor.o --omf_browse .\objects\distancesensor.crf --depend .\objects\distancesensor.d)
-I (DistanceSensor.h)(0x5E8741AD)
+F (.\DistanceSensor.c)(0x5E877D97)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\user\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32L476xx-o .\objects\distancesensor.o --omf_browse .\objects\distancesensor.crf --depend .\objects\distancesensor.d)
+I (DistanceSensor.h)(0x5E877DC5)
 I (stm32l476xx.h)(0x5E83C267)
 I (C:\Users\user\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D2663A6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9BA508)
@@ -66,4 +66,4 @@ I (C:\Users\user\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.3.0\Drivers\CMSIS\
 I (utils.h)(0x5E7A0B25)
 I (lcd.h)(0x5E7A0B25)
 I (LED.h)(0x5E7A8CC0)
-F (.\DistanceSensor.h)(0x5E8741AD)()
+F (.\DistanceSensor.h)(0x5E877DC5)()

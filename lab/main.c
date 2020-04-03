@@ -1,10 +1,8 @@
 //-------------------------------------------------------------------
-// Hack demo to toggle red and green LEDS on Discovery board
-// Jan 2019 - WPS
-//
-// Uses Zhu's SysClock code to init system clocks
+// Lab 6 Embedded Software ESE Winter 2020
+// Ultrasonic Range Finder Sensor
+// Stephane Durette and Nolan Thomas 
 //-------------------------------------------------------------------
-
 #include "stm32l476xx.h"
 #include "SysClock.h"
 #include "LED.h"
@@ -19,14 +17,14 @@
 int main(void){
 	System_Clock_Init(); 	// Switch System Clock = 80 MHz
 	LED_Init();						// Init GPIO bits to drive LEDs
-	LCDinit();
-	DS_Init();
+	LCDinit();						// Init LCD Display
+	DS_Init();						// Init Untrasonic Distance Sensor
 	
 	FOREVER {
 		LCDclear();
-		uint32_t dist = DS_GetDistance_cm();
-		if (dist){
-			LCDprintf("Distance: %dcm", DS_GetDistance_cm());	
+		uint32_t dist = DS_GetDistance_cm(); //read the current distance value held
+		if (dist != -1){
+			LCDprintf("Distance: %dcm", dist);	
 		} else {
 			LCDprintf("Out of range");
 		}	

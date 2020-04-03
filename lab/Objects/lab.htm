@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\lab.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\lab.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Apr 03 08:09:31 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Apr 03 11:17:45 2020
 <BR><P>
 <H3>Maximum Stack Usage =        324 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -766,23 +766,23 @@ Global Symbols
 <P><STRONG><a name="[9f]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, _printf_pad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = _printf_pre_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_hex_real
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_hex_real
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_wctomb
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_str
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
 </UL>
 
 <P><STRONG><a name="[a0]"></a>_printf_post_padding</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, _printf_pad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = _printf_post_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_hex_real
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_hex_real
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_wctomb
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_str
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
 </UL>
 
 <P><STRONG><a name="[a1]"></a>_printf_truncate_signed</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, _printf_truncate.o(.text))
@@ -952,12 +952,12 @@ Global Symbols
 <P><STRONG><a name="[b1]"></a>_printf_fp_dec_real</STRONG> (Thumb, 620 bytes, Stack size 104 bytes, _printf_fp_dec.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 324<LI>Call Chain = _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec
 </UL>
@@ -965,10 +965,10 @@ Global Symbols
 <P><STRONG><a name="[b4]"></a>_printf_fp_hex_real</STRONG> (Thumb, 756 bytes, Stack size 72 bytes, _printf_fp_hex.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = _printf_fp_hex_real &rArr; _printf_fp_infnan &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_hex
 </UL>
@@ -1141,8 +1141,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2e
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__btod_div_common
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 </UL>
 
 <P><STRONG><a name="[b0]"></a>_btod_emul</STRONG> (Thumb, 42 bytes, Stack size 28 bytes, btod.o(CL$$btod_emul))
@@ -1151,8 +1151,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__btod_mult_common
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2e
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 </UL>
 
 <P><STRONG><a name="[bf]"></a>__btod_mult_common</STRONG> (Thumb, 580 bytes, Stack size 16 bytes, btod.o(CL$$btod_mult_common))
@@ -1161,33 +1161,17 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
 </UL>
 
-<P><STRONG><a name="[c3]"></a>ConfigPA0</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, distancesensor.o(i.ConfigPA0))
-<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init_Echo
-</UL>
-
-<P><STRONG><a name="[d0]"></a>DS_GetDistance_cm</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, distancesensor.o(i.DS_GetDistance_cm))
+<P><STRONG><a name="[d0]"></a>DS_GetDistance_cm</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, distancesensor.o(i.DS_GetDistance_cm))
 <BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[c0]"></a>DS_Init</STRONG> (Thumb, 12 bytes, Stack size 4 bytes, distancesensor.o(i.DS_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = DS_Init &rArr; DS_Init_Echo
+<P><STRONG><a name="[c0]"></a>DS_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, distancesensor.o(i.DS_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = DS_Init &rArr; DS_Init_Echo
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init_Trigger
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init_Echo
 </UL>
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[c2]"></a>DS_Init_Echo</STRONG> (Thumb, 246 bytes, Stack size 8 bytes, distancesensor.o(i.DS_Init_Echo))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DS_Init_Echo
-</UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConfigPA0
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init
-</UL>
-
-<P><STRONG><a name="[c1]"></a>DS_Init_Trigger</STRONG> (Thumb, 252 bytes, Stack size 0 bytes, distancesensor.o(i.DS_Init_Trigger))
-<BR><BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init
 </UL>
 
 <P><STRONG><a name="[c6]"></a>Delay_ms</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, lcd.o(i.Delay_ms))
@@ -1295,7 +1279,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
 
-<P><STRONG><a name="[95]"></a>main</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[95]"></a>main</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
 <LI>Call Chain = main &rArr; LCDprintf &rArr; vsnprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1356,17 +1340,33 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
+<P><STRONG><a name="[c3]"></a>ConfigPA0</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, distancesensor.o(i.ConfigPA0))
+<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init_Echo
+</UL>
+
+<P><STRONG><a name="[c2]"></a>DS_Init_Echo</STRONG> (Thumb, 246 bytes, Stack size 8 bytes, distancesensor.o(i.DS_Init_Echo))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DS_Init_Echo
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConfigPA0
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init
+</UL>
+
+<P><STRONG><a name="[c1]"></a>DS_Init_Trigger</STRONG> (Thumb, 252 bytes, Stack size 0 bytes, distancesensor.o(i.DS_Init_Trigger))
+<BR><BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DS_Init
+</UL>
+
 <P><STRONG><a name="[60]"></a>_printf_input_char</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_common.o(.text)
 </UL>
 <P><STRONG><a name="[ac]"></a>_fp_digits</STRONG> (Thumb, 432 bytes, Stack size 96 bytes, _printf_fp_dec.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 220<LI>Call Chain = _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ll_udiv10
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ll_udiv10
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_d2e
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
